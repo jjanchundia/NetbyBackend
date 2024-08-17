@@ -1,13 +1,11 @@
 ﻿using MediatR;
 using Netby.Application.Services.Interfaces;
 using Netby.Domain;
-using Netby.Infraestucture.Persistence;
 
 namespace Netby.Application.UseCases.Formulario
 {
     public class EliminarFormulario
     {
-
         public class EliminarFormularioCommand: IRequest<Result<string>>
         {
             public int Id { get; set; }

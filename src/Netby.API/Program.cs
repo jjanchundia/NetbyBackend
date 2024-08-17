@@ -35,10 +35,10 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
 builder.Services.AddScoped<IRequestHandler<ObtenerCampos.ObtenerCamposRequest, Result<List<CamposDtos>>>, ObtenerCampos.Handler>();
-//builder.Services.AddScoped<IRequestHandler<ObtenerTiposPermisos.ObtenerTiposPermisosRequest, Result<List<TipoPermisoDto>>>, ObtenerTiposPermisos.Handler>();
+builder.Services.AddScoped<IRequestHandler<ObtenerCampoPorId.ObtenercampoPorIdRequest, Result<CamposDtos>>, ObtenerCampoPorId.Handler>();
 builder.Services.AddScoped<IRequestHandler<AgregarCampo.CrearCamposCommand, Result<CamposDtos>>, AgregarCampo.Handler>();
-//builder.Services.AddScoped<IRequestHandler<ModificarTipoPermiso.ModificarTipoPermisoCommand, Result<TipoPermisoDto>>, ModificarTipoPermiso.Handler>();
-
+builder.Services.AddScoped<IRequestHandler<ActualizarCampo.ActualizarCampoCommand, Result<CamposDtos>>, ActualizarCampo.Handler>();
+builder.Services.AddScoped<IRequestHandler<EliminarCampo.EliminarCampoCommand, Result<string>>, EliminarCampo.Handler>();
 builder.Services.AddScoped<IRequestHandler<ObtenerFormularios.ObtenerFormulariosRequest, Result<List<FormularioDto>>>, ObtenerFormularios.Handler>();
 builder.Services.AddScoped<IRequestHandler<AgregarFormulario.CrearFormularioCommand, Result<FormularioDto>>, AgregarFormulario.Handler>();
 builder.Services.AddScoped<IRequestHandler<ObtenerFormularioPorId.ObtenerFormularioPorIdRequest, Result<FormularioDto>>, ObtenerFormularioPorId.Handler>();

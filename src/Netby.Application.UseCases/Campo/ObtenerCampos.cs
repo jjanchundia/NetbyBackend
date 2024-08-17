@@ -25,11 +25,12 @@ namespace Netby.Application.UseCases.Campo
 
                 foreach (var item in campos)
                 {
-                    //var u = await _unitOfWork.UsuarioRepository.ObtenerPorId(item.UsuarioId);
+                    var formulario = await _unitOfWork.FormularioRepository.ObtenerPorId(item.FormularioId);
                     var CamposDtos = new CamposDtos
                     {
                         Id = item.Id,
                         FormularioId = item.FormularioId,
+                        FormularioNombre = formulario.Nombre,
                         NombreCampo = item.NombreCampo,
                         TipoCampo = item.TipoCampo,
                         EsRequerido = item.EsRequerido,

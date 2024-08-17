@@ -25,7 +25,6 @@ namespace Netby.Application.UseCases.Formulario
 
                 foreach (var item in formularios)
                 {
-                    //var u = await _unitOfWork.UsuarioRepository.ObtenerPorId(item.UsuarioId);
                     var FormularioDto = new FormularioDto
                     {
                         Id = item.Id,
