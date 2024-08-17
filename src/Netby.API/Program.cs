@@ -41,10 +41,9 @@ builder.Services.AddScoped<IRequestHandler<AgregarCampo.CrearCamposCommand, Resu
 
 builder.Services.AddScoped<IRequestHandler<ObtenerFormularios.ObtenerFormulariosRequest, Result<List<FormularioDto>>>, ObtenerFormularios.Handler>();
 builder.Services.AddScoped<IRequestHandler<AgregarFormulario.CrearFormularioCommand, Result<FormularioDto>>, AgregarFormulario.Handler>();
-//builder.Services.AddScoped<IRequestHandler<ObtenerPermiso.ObtenerPermisoRequest, Result<List<PermisoDto>>>, ObtenerPermiso.Handler>();
-//builder.Services.AddScoped<IRequestHandler<ObtenerPermisoPorId.ObtenerPermisoPorIdRequest, Result<PermisoDto>>, ObtenerPermisoPorId.Handler>();
-//builder.Services.AddScoped<IRequestHandler<SolicitarPermiso.SolicitarPermisoCommand, Result<PermisoDto>>, SolicitarPermiso.Handler>();
-//builder.Services.AddScoped<IRequestHandler<ModificarPermiso.ModificarPermisoCommand, Result<PermisoDto>>, ModificarPermiso.Handler>();
+builder.Services.AddScoped<IRequestHandler<ObtenerFormularioPorId.ObtenerFormularioPorIdRequest, Result<FormularioDto>>, ObtenerFormularioPorId.Handler>();
+builder.Services.AddScoped<IRequestHandler<ActualizarFormulario.ActualizarFormularioCommand, Result<FormularioDto>>, ActualizarFormulario.Handler>();
+builder.Services.AddScoped<IRequestHandler<EliminarFormulario.EliminarFormularioCommand, Result<string>>, EliminarFormulario.Handler>();
 
 builder.Services.AddMediatR(x => x.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly()));
 
@@ -56,6 +55,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+// Aplica la política CORS a todas las solicitudes
+app.UseCors("CorsPolicy");
 
 app.UseHttpsRedirection();
 

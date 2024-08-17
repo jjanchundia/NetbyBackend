@@ -5,6 +5,7 @@ namespace Netby.Application.Services.Interfaces
     {
         Task Crear(T entidad);
         Task Modificar(T entidad);
+        Task Elimninar(T entidad);
         Task<IEnumerable<T>> ObtenerTodo();
         Task<T> ObtenerPorId(int id);
     }

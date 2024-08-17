@@ -24,6 +24,11 @@ namespace Netby.Application.Services.Repository
             _dbSet.Update(entidad);
         }
 
+        public async Task Elimninar(T entidad)
+        {
+            _dbSet.Remove(entidad);
+        }
+
         public async Task<IEnumerable<T>> ObtenerTodo()
         {
             return await _dbSet.ToListAsync();

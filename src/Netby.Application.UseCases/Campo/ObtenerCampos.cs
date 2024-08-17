@@ -28,6 +28,7 @@ namespace Netby.Application.UseCases.Campo
                     //var u = await _unitOfWork.UsuarioRepository.ObtenerPorId(item.UsuarioId);
                     var CamposDtos = new CamposDtos
                     {
+                        Id = item.Id,
                         FormularioId = item.FormularioId,
                         NombreCampo = item.NombreCampo,
                         TipoCampo = item.TipoCampo,
